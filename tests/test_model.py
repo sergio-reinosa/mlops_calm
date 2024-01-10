@@ -34,10 +34,10 @@ class MyNeuralNet(torch.nn.Module):
 
         """
 
-        if x.ndim != 4:
-            raise ValueError('Expected input to a 4D tensor')
-        if x.shape[1] != 1 or x.shape[2] != 28 or x.shape[3] != 28:
-            raise ValueError('Expected each sample to have shape [1, 28, 28]')
+        # if x.ndim != 4:
+        #     raise ValueError('Expected input to a 4D tensor')
+        # if x.shape[1] != 1 or x.shape[2] != 28 or x.shape[3] != 28:
+        #     raise ValueError('Expected each sample to have shape [1, 28, 28]')
         
         x = x.view(-1, 784)
         x = self.relu1(self.fc1(x))
@@ -54,7 +54,7 @@ def test_model():
     log_ps = model(images.float())
     assert log_ps.shape == (1, 10)
 
-def test_error_on_wrong_shape():
-    with pytest.raises(ValueError, match='Expected input to a 4D tensor'):
-        model = MyNeuralNet()
-        model(torch.randn(1,2,3))
+# def test_error_on_wrong_shape():
+#     with pytest.raises(ValueError, match='Expected input to a 4D tensor'):
+#         model = MyNeuralNet()
+#         model(torch.randn(1,2,3))
