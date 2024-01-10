@@ -6,6 +6,8 @@ import os
 from torch.utils.data import DataLoader, TensorDataset
 from torchvision import transforms
 
+### AAA
+
 def get_train_dataset():
     processed_dir = "/home/hhauter/Documents/W23/MLOps/CookieCutterProject/data/processed/corruptedmnist"
     batch_size = 256
